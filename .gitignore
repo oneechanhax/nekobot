@@ -1,9 +1,8 @@
-CMakeCache.txt
-CMakeFiles
-CMakeScripts
-Testing
-Makefile
-cmake_install.cmake
-install_manifest.txt
-compile_commands.json
-CTestTestfile.cmake
+# git ignores wew
+
+# Npm stuff
+node_modules/*
+package-lock.json
+
+# Nekobot stuff
+data/*
