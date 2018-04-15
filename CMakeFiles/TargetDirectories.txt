@@ -1,0 +1,6 @@
+/media/storage/github/nekobot/CMakeFiles/rebuild_cache.dir
+/media/storage/github/nekobot/CMakeFiles/betterthangravity.dir
+/media/storage/github/nekobot/CMakeFiles/edit_cache.dir
+/media/storage/github/nekobot/sleepy-discord/CMakeFiles/rebuild_cache.dir
+/media/storage/github/nekobot/sleepy-discord/CMakeFiles/sleepy-discord.dir
+/media/storage/github/nekobot/sleepy-discord/CMakeFiles/edit_cache.dir

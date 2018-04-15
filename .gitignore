@@ -1,8 +1,4 @@
 # git ignores wew
 
-# Npm stuff
-node_modules/*
-package-lock.json
-
 # Nekobot stuff
 data/*
