@@ -5,8 +5,8 @@
 #
 #
 
-cmake_minimum_required (VERSION 2.6)
-project (betterthangravity CXX)
+cmake_minimum_required(VERSION 2.6)
+project(betterthangravity)
 
 # Add cathooks source files except the modules, we add those selectivly
 file(GLOB_RECURSE SOURCE_FILES "src/*.c*")
@@ -18,11 +18,12 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_FLAGS_DEBUG "-g3 -ggdb -Wall")
 set(CMAKE_CXX_FLAGS_RELEASE "-s -mtune=generic -O3")
 
+# Dependancies
+add_subdirectory(cpr) # why both? I dont really know...
 add_subdirectory(sleepy-discord)
 
-#include_directories(${INCLUDE_DIRS})
 add_executable(betterthangravity ${SOURCE_FILES})
 
-target_include_directories(betterthangravity PUBLIC "include/sleepy_discord/" "include/sleepy_discord/IncludeNonexistent/")
-
-target_link_libraries(betterthangravity c stdc++ sleepy-discord)
+message(STATUS ${CPR_INCLUDE_DIRS})
+target_include_directories(betterthangravity PUBLIC "sleepy-discord/include/sleepy_discord/" "${CPR_INCLUDE_DIRS}" "websocketpp/" "sleepy-discord/include/sleepy_discord/IncludeNonexistent/")
+target_link_libraries(betterthangravity c stdc++ sleepy-discord ${CPR_LIBRARIES})

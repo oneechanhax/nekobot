@@ -1,1 +1,0 @@
-/usr/bin/g++    -rdynamic CMakeFiles/betterthangravity.dir/src/main.cpp.o  -o betterthangravity -lc -lstdc++ sleepy-discord/libsleepy-discord.a -lssl 
