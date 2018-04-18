@@ -1,12 +1,12 @@
-[submodule "sleepy-discord"]
-	path = sleepy-discord
-	url = https://github.com/oneechanhax/sleepy-discord
-[submodule "nekohook"]
-	path = nekohook
-	url = https://github.com/oneechanhax/nekohook
 [submodule "websocketpp"]
 	path = websocketpp
 	url = https://github.com/oneechanhax/websocketpp
 [submodule "cpr"]
 	path = cpr
 	url = https://github.com/whoshuu/cpr
+[submodule "sleepy-discord"]
+	path = sleepy-discord
+	url = https://github.com/oneechanhax/sleepy-discord
+[submodule "nekohook"]
+	path = nekohook
+	url = https://github.com/oneechanhax/nekohook

@@ -10,17 +10,18 @@
 
 #include "util/functional.hpp"
 #include "util/chrono.hpp"
+#include "client.hpp"
 
 #include "intake.hpp"
 
 // We use this to prevent multiple clients from activating message event multiple times
-CatFastMap<SleepyDiscord::Message, CatTimer> message_pool;
+//CatFastMap<SleepyDiscord::Message, CatTimer> message_pool;
 
 CMEvent<const SleepyDiscord::Message&> message_event;
 
 // We process it through the pool to make sure we dont get duplicates
 void MessageRecieve(const SleepyDiscord::Message& intake) {
-  static std::mutex lock;
+  /*static std::mutex lock;
   std::lock_guard<std::mutex> guard(lock);
 
   // Clear out old messages
@@ -36,7 +37,6 @@ void MessageRecieve(const SleepyDiscord::Message& intake) {
   // Register the event
   CatTimer timer;
   timer.Reset(); // reset to ensure timer has the time of NOW!
-  message_pool.insert({intake, timer});
-  printf("Diks: %s", intake.content);
+  message_pool.insert({intake, timer});*/
   message_event(intake);
 }
