@@ -19,11 +19,13 @@ set(CMAKE_CXX_FLAGS_DEBUG "-g3 -ggdb -Wall")
 set(CMAKE_CXX_FLAGS_RELEASE "-s -mtune=generic -O3")
 
 # Dependancies
+find_package(OpenSSL REQUIRED)
+#set(USE_SYSTEM_CURL ON)
 add_subdirectory(cpr) # why both? I dont really know...
 add_subdirectory(sleepy-discord)
 
 add_executable(betterthangravity ${SOURCE_FILES})
 
 message(STATUS ${CPR_INCLUDE_DIRS})
-target_include_directories(betterthangravity PUBLIC "sleepy-discord/include/sleepy_discord/" "${CPR_INCLUDE_DIRS}" "websocketpp/" "sleepy-discord/include/sleepy_discord/IncludeNonexistent/")
-target_link_libraries(betterthangravity c stdc++ sleepy-discord ${CPR_LIBRARIES})
+target_include_directories(betterthangravity PUBLIC "sleepy-discord/include/" "${CPR_INCLUDE_DIRS}" "websocketpp/" "sleepy-discord/include/sleepy_discord/IncludeNonexistent/")
+target_link_libraries(betterthangravity c stdc++ sleepy-discord ${OPENSSL_SSL_LIBRARY} ${CPR_LIBRARIES})
